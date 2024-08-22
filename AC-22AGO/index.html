@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figura Geométrica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            width: 80%;
+        }
+        .controls, .canvas-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .controls label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .controls input[type="text"] {
+            width: 100px;
+        }
+        .canvas-container {
+            position: relative;
+        }
+        #myCanvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <label># Lados: <input type="text" id="sides" value="5"></label>
+            <label>Dimensión lado (L): <input type="text" id="dimension" value="35"></label>
+            <button id="draw">Trazar</button>
+            <button id="clear">Borrar</button>
+            
+            <div class="transformations">
+                <h3>Transformación</h3>
+                <label for="transformationType">Tipo de Transformación:</label>
+                <select id="transformationType">
+                    <option value="translate">Traslación</option>
+                    <option value="scale">Escalado</option>
+                    <option value="rotate">Rotación</option>
+                </select>
+
+                <label>Tx: <input type="text" id="tx"></label>
+                <label>Ty: <input type="text" id="ty"></label>
+
+                <label>Sx: <input type="text" id="sx"></label>
+                <label>Sy: <input type="text" id="sy"></label>
+
+                <label>Ang: <input type="text" id="angle" value="0.5π"></label>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="myCanvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

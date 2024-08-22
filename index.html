@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figura Geométrica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px; /* Aumenta el ancho máximo del contenedor */
+            display: flex;
+            justify-content: space-between; /* Espacio entre el canvas y los controles */
+            align-items: flex-start; /* Alineación superior */
+            margin-bottom: 20px; /* Espacio entre el título y el container */
+        }
+        .controls {
+            width: 45%; /* Ajusta el ancho de los controles */
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            margin-right: 10px; /* Espacio entre los controles y el canvas */
+        }
+        .controls label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .controls input[type="text"], .controls select {
+            width: 100%;
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .controls button {
+            margin-top: 10px;
+            width: 48%;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+        .canvas-container {
+            width: 60%; /* Ajusta el ancho del contenedor del canvas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #myCanvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; width: 100%;">Trazo de polígonos regulares</h1>
+    <div class="container">
+        <div class="controls">
+            <label># Lados: <input type="text" id="sides"></label>
+            <label>Dimensión lado (L): <input type="text" id="dimension"></label>
+            <button id="draw">Trazar</button>
+            <button id="clear">Borrar</button>
+            
+            <div class="transformations">
+                <h3>Transformación</h3>
+                <label for="transformationType">Tipo de Transformación:</label>
+                <select id="transformationType">
+                    <option value="translate">Traslación</option>
+                    <option value="scale">Escalado</option>
+                    <option value="rotate">Rotación</option>
+                </select>
+
+                <label>Traslación en x: <input type="text" id="tx"></label>
+                <label>Traslación en y: <input type="text" id="ty"></label>
+
+                <label>Escalado en x: <input type="text" id="sx"></label>
+                <label>Escalado en y: <input type="text" id="sy"></label>
+
+                <label>Ángulo: <input type="text" id="angle"></label>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="myCanvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
