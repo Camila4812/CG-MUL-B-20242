@@ -47,5 +47,9 @@ function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-
+document.getElementById('draw').addEventListener('click', function() {
+    const n = parseInt(document.getElementById('sides').value);
+    const L = parseFloat(document.getElementById('dimension').value);
+    drawPolygon(n, L);
+});
 
